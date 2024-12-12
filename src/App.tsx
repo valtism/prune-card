@@ -140,7 +140,10 @@ function Card({ name, number, expiration, cvv }: CardProps) {
                 )}
               </div>
               <div className="invisible col-start-1 row-start-1 tabular-nums">
-                {number}
+                <>
+                  <RedactedNumbers count={4} /> <RedactedNumbers count={4} />{" "}
+                  <RedactedNumbers count={4} /> <RedactedNumbers count={4} />
+                </>
               </div>
             </div>
             <button
