@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* src/assets/RoobertSemiMono-Bold.woff2 src/assets/RoobertSemiMono-BoldItalic.woff2 src/assets/RoobertSemiMono-Heavy.woff2 src/assets/RoobertSemiMono-HeavyItalic.woff2 src/assets/RoobertSemiMono-Light.woff2 src/assets/RoobertSemiMono-LightItalic.woff2 src/assets/RoobertSemiMono-Medium.woff2 src/assets/RoobertSemiMono-MediumItalic.woff2 src/assets/RoobertSemiMono-Regular.woff2 src/assets/RoobertSemiMono-RegularItalic.woff2 src/assets/RoobertSemiMono-SemiBold.woff2 src/assets/RoobertSemiMono-SemiBoldItalic.woff2 */
+
+@font-face {
+  font-family: "Roobert Bold";
+  src: url("./assets/Roobert-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roobert";
+  src: url("./assets/Roobert-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roobert SemiBold";
+  src: url("./assets/Roobert-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roobert SemiBold Italic";
+  src: url("./assets/Roobert-SemiBoldItalic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roobert Light";
+  src: url("./assets/Roobert-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roobert Light Italic";
+  src: url("./assets/Roobert-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roobert Medium";
+  src: url("./assets/Roobert-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roobert Medium Italic";
+  src: url("./assets/Roobert-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roobert Italic";
+  src: url("./assets/Roobert-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roobert Heavy";
+  src: url("./assets/Roobert-Heavy.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roobert Heavy Italic";
+  src: url("./assets/Roobert-HeavyItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roobert Bold Italic";
+  src: url("./assets/Roobert-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@theme {
+  --font-sans: Roobert, sans-serif;
+
+  --color-prune-50: #fbf6fd;
+  --color-prune-100: #f6edfa;
+  --color-prune-200: #eedaf4;
+  --color-prune-300: #e1bdea;
+  --color-prune-400: #cf96dc;
+  --color-prune-500: #b86cc9;
+  --color-prune-600: #9d4dac;
+  --color-prune-700: #833d8e;
+  --color-prune-800: #6d3375;
+  --color-prune-900: #5b2e61;
+  --color-prune-950: #351339;
+}
+
+.redact {
+  position: relative;
+  color: transparent;
+}
+.redact::after {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  color: white;
+  content: "・";
+}
