@@ -30,6 +30,7 @@ function Card({ name, number, expiration, cvv }: CardProps) {
     <div
       className="group relative inline-flex items-center justify-center p-4"
       style={{
+        // @ts-expect-error Custom CSS properties
         "--shine-x": "0px",
         "--shine-y": "0px",
         "--rotate-x": "0deg",
