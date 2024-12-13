@@ -106,7 +106,7 @@ function Card({ name, number, expiration, cvv }: CardProps) {
         <div className="relative flex size-full flex-col items-start justify-end gap-2 p-4 text-white">
           <PruneLogo className="absolute top-3 right-4 h-6" />
           <div className="absolute right-6 bottom-16 flex items-center justify-center overflow-clip rounded-lg bg-zinc-500">
-            <EmvChipIcon className="ml-px h-8 p-px" />
+            <EmvChipIcon className="h-8 p-px" />
             <div
               className="pointer-events-none absolute rounded-full bg-white/40 blur-xl"
               style={{
