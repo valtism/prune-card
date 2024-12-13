@@ -112,8 +112,8 @@ function Card({ name, number, expiration, cvv }: CardProps) {
               style={{
                 width: 93,
                 height: 62,
-                left: -280 - 93 / 2,
-                top: -100 - 62 / 2,
+                left: -260 - 93 / 2,
+                top: -110 - 62 / 2,
                 transform:
                   "translateX(var(--shine-x)) translateY(var(--shine-y))",
               }}
@@ -181,8 +181,8 @@ function Card({ name, number, expiration, cvv }: CardProps) {
             style={{
               width: 93,
               height: 62,
-              left: -110 / 2,
-              top: -70 / 2,
+              left: -100 / 2,
+              top: -60 / 2,
               transform:
                 "translateX(var(--shine-x)) translateY(var(--shine-y))",
             }}
