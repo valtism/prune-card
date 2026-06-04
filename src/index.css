@@ -21,6 +21,14 @@
   --color-prune-800: #6d3375;
   --color-prune-900: #5b2e61;
   --color-prune-950: #351339;
+  --color-prune-970: #250329;
+
+  --color-prune-orange: #f58421;
+
+  --card-depth: 0.26mm;
+  --card-radius: 3mm;
+  --card-width: 85.6mm;
+  --card-height: 53.98mm;
 }
 
 .redact {
@@ -35,4 +43,94 @@
   inset: 0;
   color: white;
   content: "・";
+}
+
+.my-animation {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  transform-style: preserve-3d;
+  animation: turn linear forwards;
+  animation-timeline: view();
+  animation-range: 35% 70%;
+  perspective: 1000px;
+}
+
+@keyframes turn {
+  0% {
+    transform: translateY(-200%) rotateZ(90deg) rotateX(180deg);
+    visibility: visible;
+  }
+  60% {
+    transform: translateY(-30%) rotateZ(65deg) rotateX(20deg);
+    visibility: visible;
+  }
+  80% {
+    transform: translateY(0) rotateZ(35deg) rotateX(0deg);
+    visibility: visible;
+  }
+  95% {
+    transform: translateY(0) rotateZ(11deg) rotateX(0deg);
+    visibility: visible;
+  }
+  100% {
+    transform: translateY(0) rotateZ(12deg) rotateX(0deg);
+    visibility: visible;
+  }
+}
+
+/* Create all sides of the box */
+.my-animation > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: inherit;
+}
+
+/* Front face - original content */
+.my-animation > *:nth-child(1) {
+  transform: translateZ(var(--card-depth));
+  border-radius: var(--card-radius);
+}
+
+/* Back face */
+.my-animation > *:nth-child(2) {
+  transform: rotateY(180deg) translateZ(var(--card-depth));
+  border-radius: var(--card-radius);
+}
+
+/* Right face */
+.my-animation > *:nth-child(3) {
+  transform: rotateY(90deg) translateZ(var(--card-depth));
+  width: calc(2 * var(--card-depth)); /* This becomes the depth */
+  height: calc(100% - var(--card-radius) * 2);
+  top: calc(var(--card-radius));
+  right: 0px;
+}
+
+/* Left face */
+.my-animation > *:nth-child(4) {
+  transform: rotateY(-90deg) translateZ(var(--card-depth));
+  width: calc(2 * var(--card-depth)); /* This becomes the depth */
+  height: calc(100% - var(--card-radius) * 2);
+  bottom: calc(var(--card-radius));
+  left: 0;
+}
+
+/* Top face */
+.my-animation > *:nth-child(5) {
+  transform: rotateX(90deg) translateZ(var(--card-depth));
+  height: calc(2 * var(--card-depth)); /* This becomes the depth */
+  width: calc(100% - var(--card-radius) * 2);
+  left: calc(var(--card-radius));
+  top: 0;
+}
+
+/* Bottom face */
+.my-animation > *:nth-child(6) {
+  transform: rotateX(-90deg) translateZ(var(--card-depth));
+  height: calc(2 * var(--card-depth)); /* This becomes the depth */
+  width: calc(100% - var(--card-radius) * 2);
+  right: calc(var(--card-radius));
+  bottom: 0;
 }
